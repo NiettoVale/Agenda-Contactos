@@ -1,8 +1,9 @@
 import Contact from "../../Components/Contact/Contact";
-import styles from "./Home.module.css";
-import listContacts from "./listContact.json";
+import styles from "../Home/Home.module.css";
+import listContacts from "../Home/listContact.json";
 
-const Home = () => {
+const DeletedContacts = () => {
+  const deleted = true;
   return (
     <div className={styles.homeContainer}>
       {listContacts.map(({ name, phone, location, email }) => {
@@ -13,6 +14,7 @@ const Home = () => {
             location={location}
             email={email}
             key={name}
+            deleted={deleted}
           />
         );
       })}
@@ -20,4 +22,4 @@ const Home = () => {
   );
 };
 
-export default Home;
+export default DeletedContacts;

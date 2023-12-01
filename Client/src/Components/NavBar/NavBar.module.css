@@ -5,10 +5,19 @@
   display: flex;
 }
 
-h1 {
+.nav h1 {
   margin: 0;
   font-size: 50px;
   margin-right: 30px;
+}
+
+.nav h1:hover {
+  cursor: pointer;
+  color: #008170;
+}
+
+.menuResponsive {
+  display: none;
 }
 
 .Links {
@@ -21,8 +30,13 @@ h1 {
 
 a {
   text-decoration: none;
+  color: white;
 }
 
 a:visited {
-  color: white;
+  color: white; /* Mantener color blanco para el estado visitado */
+}
+
+a:hover {
+  color: #008170; /* Cambiar color al pasar el ratón sobre el enlace */
 }

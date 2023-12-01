@@ -5,13 +5,15 @@ const NavBar = () => {
   return (
     <nav className={styles.nav}>
       <section>
-        <h1>CONTACTOS</h1>
+        <Link to={"/"}>
+          <h1>CONTACTOS</h1>
+        </Link>
       </section>
 
       <section className={styles.Links}>
-        <Link to={""}>Crear Contacto</Link>
-        <Link to={""}>Buscar Contacto</Link>
-        <Link to={""}>Ver Contactos Eliminados</Link>
+        <Link to={"/create-contact"}>Crear Contacto</Link>
+        <Link to={"/search"}>Buscar Contacto</Link>
+        <Link to={"/deleted-contact"}>Ver Contactos Eliminados</Link>
       </section>
     </nav>
   );

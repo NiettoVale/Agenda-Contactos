@@ -1,0 +1,57 @@
+.searchBar {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 30px;
+}
+
+.elP {
+  display: block;
+  font-size: 44px;
+  text-align: center;
+  color: white;
+}
+
+.inputSearch {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.inputSearch input {
+  width: 50%;
+  height: 35px;
+  border: none;
+  border-radius: 50px;
+  padding: 15px;
+  font-size: 18px;
+}
+
+.contactsSearch {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  justify-items: center;
+  align-items: center;
+}
+
+@media screen and (max-width: 1094px) {
+  .contactsSearch {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    justify-items: center;
+    align-items: center;
+  }
+}
+
+@media screen and (max-width: 740px) {
+  .contactsSearch {
+    display: grid;
+    grid-template-columns: repeat(1, minmax(0, 1fr));
+    justify-items: center;
+    align-items: center;
+  }
+
+  .inputSearch input {
+    font-size: 14px;
+  }
+}

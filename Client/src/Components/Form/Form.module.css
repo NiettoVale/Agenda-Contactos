@@ -1,0 +1,163 @@
+.centerContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.formContainer {
+  background-color: #001a79c8;
+  width: 800px; /* Ajusta el ancho según tus necesidades */
+  height: 550px;
+  padding: 20px;
+  margin-top: -20px;
+  border-radius: 35px;
+  color: white;
+}
+
+.titleForm {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.titleForm h1 {
+  font-size: 55px;
+}
+
+.infoForm {
+  display: grid;
+  gap: 10px;
+  font-size: 35px;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 25px;
+}
+
+.inputRow {
+  display: grid;
+  grid-template-columns: max-content 1fr;
+  align-items: center;
+}
+
+.labelForm {
+  margin-right: 10px;
+  height: 100%; /* Asegura que el label tenga la misma altura que el input */
+}
+
+.inputRow input {
+  margin-left: 20px; /* Ajusta según sea necesario */
+  height: 35px;
+  width: 130%;
+  border-radius: 50px;
+  border: none;
+}
+
+.btnForm {
+  margin-top: 10px;
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+.btnForm button {
+  border: none;
+  border-radius: 50px;
+  width: 150px;
+  height: 50px;
+  padding: 10px;
+  color: white;
+  font-family: "Jockey One", sans-serif;
+  font-size: 25px;
+}
+
+.btnForm button:hover {
+  cursor: pointer;
+}
+
+.btnCheck,
+.btnCancel {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+.btnCheck {
+  background-color: #008170;
+}
+
+.btnCancel {
+  background-color: #b31312;
+}
+
+.btnCheck:hover {
+  background-color: #02e2c4;
+}
+
+.btnCancel:hover {
+  background-color: #ed1818;
+}
+
+.formContainer span {
+  color: red;
+  font-size: 15px;
+  text-align: center;
+}
+
+@media screen and (max-width: 860px) {
+  .formContainer {
+    width: 600px;
+  }
+}
+
+@media screen and (max-width: 640px) {
+  .formContainer {
+    width: 500px;
+  }
+}
+
+@media screen and (max-width: 544px) {
+  .formContainer {
+    width: 330px;
+    height: 400px;
+    margin-top: -450px;
+  }
+
+  .titleForm h1 {
+    font-size: 25px;
+  }
+
+  .titleForm img {
+    width: 85px;
+    height: 85px;
+  }
+
+  .infoForm {
+    display: grid;
+    gap: 10px;
+    font-size: 25px;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 25px;
+    margin-top: 50px;
+  }
+
+  .labelForm {
+    margin-right: 10px;
+    height: 100%; /* Asegura que el label tenga la misma altura que el input */
+  }
+
+  .inputRow input {
+    margin-left: 20px; /* Ajusta según sea necesario */
+    height: 35px;
+    width: 100%;
+    border-radius: 50px;
+    border: none;
+  }
+
+  .formContainer span {
+    color: red;
+    font-size: 10px;
+    text-align: center;
+  }
+}

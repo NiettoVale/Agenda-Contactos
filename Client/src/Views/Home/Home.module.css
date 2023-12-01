@@ -4,3 +4,21 @@
   justify-items: center;
   align-items: center;
 }
+
+@media screen and (max-width: 1096px) {
+  .homeContainer {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    justify-items: center;
+    align-items: center;
+  }
+}
+
+@media screen and (max-width: 728px) {
+  .homeContainer {
+    display: grid;
+    grid-template-columns: repeat(1, minmax(0, 1fr));
+    justify-items: center;
+    align-items: center;
+  }
+}

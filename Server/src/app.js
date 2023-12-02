@@ -7,6 +7,11 @@ const app = express();
 // Importaciones de las rutas:
 const createUser = require("./routes/createUser.routes");
 const loginUser = require("./routes/loginUser.routes");
+const createContact = require("./routes/createContact.routes");
+const deleteContact = require("./routes/deleteContact.routes");
+const updateContact = require("./routes/updateContact.routes");
+const getAllContacts = require("./routes/getAllContacts.routes");
+const getContactByName = require("./routes/getContactByName.routes");
 
 // Middlewares:
 app.use(express.json());
@@ -16,6 +21,10 @@ app.use(morgan("dev"));
 // Rutas:
 app.use("/", createUser);
 app.use("/", loginUser);
-
+app.use("/", createContact);
+app.use("/", deleteContact);
+app.use("/", updateContact);
+app.use("/", getAllContacts);
+app.use("/", getContactByName);
 // Exportación del servidor:
 module.exports = app;

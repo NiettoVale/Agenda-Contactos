@@ -8,7 +8,9 @@ const Home = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await fetch("http://localhost:3001/contacts");
+        const response = await fetch(
+          "https://backend-contacts-qamh.onrender.com/contacts"
+        );
         const data = await response.json();
         setListContact(data);
       } catch (error) {

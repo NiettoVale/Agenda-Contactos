@@ -15,7 +15,7 @@ import { Link } from "react-router-dom";
 const Contact = ({ name, phone, location, email, deleted, contactId }) => {
   const deleteContact = async () => {
     const response = await fetch(
-      `http://localhost:3001/delete-contact/${contactId}`,
+      `https://backend-contacts-qamh.onrender.com/delete-contact/${contactId}`,
       {
         method: "DELETE",
         headers: {
@@ -45,7 +45,7 @@ const Contact = ({ name, phone, location, email, deleted, contactId }) => {
   const restoreContact = async () => {
     const deleted = { deleted: false };
     const response = await fetch(
-      `http://localhost:3001/update-contact/${contactId}`,
+      `https://backend-contacts-qamh.onrender.com/update-contact/${contactId}`,
       {
         method: "PUT",
         headers: {
@@ -158,7 +158,7 @@ export default Contact;
 // const Contact = ({ name, phone, location, email, deleted, contactId }) => {
 //   const deleteContact = async () => {
 //     const response = await fetch(
-//       `http://localhost:3001/delete-contact/${contactId}`,
+//       `https://backend-contacts-qamh.onrender.com/delete-contact/${contactId}`,
 //       {
 //         method: "DELETE",
 //         headers: {
@@ -178,7 +178,7 @@ export default Contact;
 //     const deleted = { deleted: false };
 //     console.log(JSON.stringify(contactId));
 //     const response = await fetch(
-//       `http://localhost:3001/update-contact/${contactId}`,
+//       `https://backend-contacts-qamh.onrender.com/update-contact/${contactId}`,
 //       {
 //         method: "PUT",
 //         headers: {

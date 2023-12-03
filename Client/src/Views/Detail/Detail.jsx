@@ -17,7 +17,7 @@ const EditContactForm = () => {
     const fetchData = async () => {
       try {
         const response = await fetch(
-          `http://localhost:3001/contact/${contactName}`
+          `https://backend-contacts-qamh.onrender.com/contact/${contactName}`
         );
 
         const responseData = await response.json();
@@ -40,7 +40,7 @@ const EditContactForm = () => {
     console.log(data);
     try {
       const response = await fetch(
-        `http://localhost:3001/update-contact/${data.contactId}`,
+        `https://backend-contacts-qamh.onrender.com/update-contact/${data.contactId}`,
         {
           method: "PUT",
           headers: {

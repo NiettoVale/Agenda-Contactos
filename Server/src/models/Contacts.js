@@ -33,7 +33,7 @@ module.exports = (sequelize) => {
       },
 
       deleted: {
-        type: DataTypes.STRING,
+        type: DataTypes.BOOLEAN,
         defaultValue: false,
         allowNull: true,
       },

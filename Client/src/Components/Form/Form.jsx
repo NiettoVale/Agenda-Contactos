@@ -12,9 +12,42 @@ const Form = () => {
     formState: { errors },
   } = useForm();
 
-  const onSubmit = handleSubmit((data) => {
-    console.log(data);
-    // Aquí podrías enviar los datos a tu servidor o realizar alguna acción adicional
+  const onSubmit = handleSubmit(async (data) => {
+    // Construir el objeto de configuración para la petición POST
+    const requestOptions = {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        // Puedes agregar otros encabezados según sea necesario
+      },
+      body: JSON.stringify(data), // Convierte los datos a formato JSON
+    };
+
+    try {
+      // Realizar la petición POST a la URL especificada usando async/await
+      const response = await fetch(
+        "http://localhost:3001/create-contact",
+        requestOptions
+      );
+
+      if (!response.ok) {
+        // Manejar errores si la respuesta no es exitosa
+        throw new Error(
+          `Error en la petición: ${response.status} ${response.statusText}`
+        );
+      }
+
+      const responseData = await response.json();
+
+      // Hacer algo con la respuesta exitosa (responseData)
+      if (responseData) {
+        window.alert("Contacto creado con éxito!");
+        window.location.reload();
+      }
+    } catch (error) {
+      // Manejar errores de la petición
+      console.error("Error en la petición:", error.message);
+    }
   });
 
   return (
@@ -94,6 +127,21 @@ const Form = () => {
                 })}
               />
               {errors.email && <span>{errors.email.message}</span>}
+            </div>
+
+            <div className={styles.inputRow}>
+              <label htmlFor="email">Phone:</label>
+              <input
+                type="phone"
+                name="phone"
+                {...register("phone", {
+                  required: {
+                    value: true,
+                    message: "Este campo es requerido.",
+                  },
+                })}
+              />
+              {errors.phone && <span>{errors.phone.message}</span>}
             </div>
           </section>
 

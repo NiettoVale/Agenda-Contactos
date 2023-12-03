@@ -12,6 +12,7 @@ const deleteContact = require("./routes/deleteContact.routes");
 const updateContact = require("./routes/updateContact.routes");
 const getAllContacts = require("./routes/getAllContacts.routes");
 const getContactByName = require("./routes/getContactByName.routes");
+const getAllContactsDeleted = require("./routes/getAllContactsDeleted");
 
 // Middlewares:
 app.use(express.json());
@@ -26,5 +27,7 @@ app.use("/", deleteContact);
 app.use("/", updateContact);
 app.use("/", getAllContacts);
 app.use("/", getContactByName);
+app.use("/", getAllContactsDeleted);
+
 // Exportación del servidor:
 module.exports = app;

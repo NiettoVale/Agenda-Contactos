@@ -1,19 +1,34 @@
 import Contact from "../Contact/Contact";
-import contacts from "../../Views/Home/listContact.json";
 import styles from "./SearchContact.module.css";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 const SearchContact = () => {
   const [contactFound, setContactFound] = useState([]);
+  const [listContacts, setListContact] = useState([]);
 
   const onChange = (event) => {
     const { value } = event.target;
 
-    const filteredContacts = contacts.filter((contact) =>
+    const filteredContacts = listContacts.filter((contact) =>
       contact.name.toLowerCase().includes(value.toLowerCase())
     );
     setContactFound(value.trim() === "" ? [] : filteredContacts);
   };
+
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const response = await fetch("http://localhost:3001/contacts");
+        const data = await response.json();
+        setListContact(data);
+      } catch (error) {
+        console.error(`Hubo un error al obtener los datos: ${error.message}`);
+        throw error;
+      }
+    };
+
+    fetchData();
+  }, []);
 
   return (
     <main className={styles.searchBar}>

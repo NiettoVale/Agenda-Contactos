@@ -1,4 +1,95 @@
+/* NavBar.module.css */
+
 .nav {
+  background-color: black;
+  margin-bottom: 20px;
+  color: white;
+  display: flex;
+}
+
+.nav h1 {
+  margin: 0;
+  font-size: 50px;
+  margin-right: 30px;
+}
+
+.nav h1:hover {
+  cursor: pointer;
+  color: #008170;
+}
+
+.Links {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  font-size: 25px;
+  position: relative;
+}
+
+.Links a {
+  text-decoration: none;
+  color: white;
+}
+
+.Links a:visited {
+  color: white;
+}
+
+.Links a:hover {
+  color: #008170;
+}
+
+.menuResponsive {
+  display: none;
+  cursor: pointer;
+}
+
+@media screen and (max-width: 762px) {
+  .nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .Links {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 60px;
+    left: 0;
+    background-color: black;
+    width: 100%;
+  }
+
+  .Links.showMenu {
+    display: flex;
+  }
+
+  .Links a {
+    padding: 10px;
+    text-align: center;
+  }
+
+  .menuResponsive {
+    display: flex;
+    align-items: center;
+  }
+}
+
+a {
+  text-decoration: none;
+  color: white;
+}
+
+a:visited {
+  color: white;
+}
+
+a:hover {
+  color: #008170;
+}
+
+/* .nav {
   background-color: black;
   margin-bottom: 20px;
   color: white;
@@ -34,9 +125,30 @@ a {
 }
 
 a:visited {
-  color: white; /* Mantener color blanco para el estado visitado */
+  color: white; 
 }
 
 a:hover {
-  color: #008170; /* Cambiar color al pasar el ratón sobre el enlace */
+  color: #008170;
 }
+
+.menuResposive {
+  display: none;
+}
+
+@media screen and (max-width: 762px) {
+  .nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+  }
+
+  .Links {
+    display: none;
+  }
+
+  .menuResposive {
+    display: flex;
+    align-items: center;
+  }
+} */

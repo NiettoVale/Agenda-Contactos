@@ -1,11 +1,28 @@
+import { useEffect, useState } from "react";
 import Contact from "../../Components/Contact/Contact";
 import styles from "./Home.module.css";
-import listContacts from "./listContact.json";
 
 const Home = () => {
+  const [listContacts, setListContact] = useState([]);
+
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const response = await fetch("http://localhost:3001/contacts");
+        const data = await response.json();
+        setListContact(data);
+      } catch (error) {
+        console.error(`Hubo un error al obtener los datos: ${error.message}`);
+        throw error;
+      }
+    };
+
+    fetchData();
+  }, []);
+
   return (
     <div className={styles.homeContainer}>
-      {listContacts.map(({ name, phone, location, email }) => {
+      {listContacts.map(({ contactId, name, phone, location, email }) => {
         return (
           <Contact
             name={name}
@@ -13,6 +30,7 @@ const Home = () => {
             location={location}
             email={email}
             key={name}
+            contactId={contactId}
           />
         );
       })}
